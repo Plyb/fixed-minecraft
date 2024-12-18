@@ -1,9 +1,9 @@
 {
     "replace": false,
     "values": [
-        "fixedminecraft:netherite_anvil",
-        "fixedminecraft:chipped_netherite_anvil",
-        "fixedminecraft:damaged_netherite_anvil",
+        // "fixedminecraft:netherite_anvil",
+        // "fixedminecraft:chipped_netherite_anvil",
+        // "fixedminecraft:damaged_netherite_anvil",
         "fixedminecraft:copper_rail",
         "fixedminecraft:exposed_copper_rail",
         "fixedminecraft:weathered_copper_rail",

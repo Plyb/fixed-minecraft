@@ -206,56 +206,56 @@ public abstract class VillagerEntityMixin extends MerchantEntity {
         }
     }
 
-    @ModifyVariable(method = "fillRecipes", at = @At("STORE"), ordinal = 0)
-    private Int2ObjectMap<TradeOffers.Factory[]> newTrades(Int2ObjectMap<TradeOffers.Factory[]> iter, @Local VillagerData villagerData){
-        if (villagerData.getProfession() == VillagerProfession.LIBRARIAN) {
-            return new Int2ObjectOpenHashMap(ImmutableMap.builder()
-                    .put(1,new TradeOffers.Factory[]{
-                            new TradeOffers.BuyItemFactory(Items.PAPER, 24, 16, 2),
-                            new TradeOffers.BuyItemFactory(Items.BOOK, 4, 12, 2),
-                            new TradeOffers.SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)
-                    })
+    // @ModifyVariable(method = "fillRecipes", at = @At("STORE"), ordinal = 0)
+    // private Int2ObjectMap<TradeOffers.Factory[]> newTrades(Int2ObjectMap<TradeOffers.Factory[]> iter, @Local VillagerData villagerData){
+    //     if (villagerData.getProfession() == VillagerProfession.LIBRARIAN) {
+    //         return new Int2ObjectOpenHashMap(ImmutableMap.builder()
+    //                 .put(1,new TradeOffers.Factory[]{
+    //                         new TradeOffers.BuyItemFactory(Items.PAPER, 24, 16, 2),
+    //                         new TradeOffers.BuyItemFactory(Items.BOOK, 4, 12, 2),
+    //                         new TradeOffers.SellItemFactory(Blocks.BOOKSHELF, 9, 1, 12, 1)
+    //                 })
 
-                    .put(2, new TradeOffers.Factory[]{
-                            biomeBook(false, villagerData),
-                            new TradeOffers.SellItemFactory(Items.LANTERN, 1, 1, 5)})
+    //                 .put(2, new TradeOffers.Factory[]{
+    //                         biomeBook(false, villagerData),
+    //                         new TradeOffers.SellItemFactory(Items.LANTERN, 1, 1, 5)})
 
-                    .put(3, new TradeOffers.Factory[]{
-                            new TradeOffers.BuyItemFactory(Items.INK_SAC, 5, 12, 20),
-                            new TradeOffers.SellItemFactory(Items.GLASS, 1, 4, 10),
-                            new TradeOffers.SellItemFactory(Items.CLOCK, 5, 1, 15),
-                            new TradeOffers.SellItemFactory(Items.COMPASS, 4, 1, 15)})
+    //                 .put(3, new TradeOffers.Factory[]{
+    //                         new TradeOffers.BuyItemFactory(Items.INK_SAC, 5, 12, 20),
+    //                         new TradeOffers.SellItemFactory(Items.GLASS, 1, 4, 10),
+    //                         new TradeOffers.SellItemFactory(Items.CLOCK, 5, 1, 15),
+    //                         new TradeOffers.SellItemFactory(Items.COMPASS, 4, 1, 15)})
 
-                    .put(4, new TradeOffers.Factory[]{
-                            new TradeOffers.EnchantBookFactory(10),
-                            new TradeOffers.BuyItemFactory(Items.WRITABLE_BOOK, 2, 12, 30)})
+    //                 .put(4, new TradeOffers.Factory[]{
+    //                         new TradeOffers.EnchantBookFactory(10),
+    //                         new TradeOffers.BuyItemFactory(Items.WRITABLE_BOOK, 2, 12, 30)})
 
-                    .put(5, new TradeOffers.Factory[]{
-                            biomeBook(true, villagerData),
-                            new TradeOffers.SellItemFactory(Items.NAME_TAG, 20, 1, 30)}).build());
-        }
-        return iter;
-    }
+    //                 .put(5, new TradeOffers.Factory[]{
+    //                         biomeBook(true, villagerData),
+    //                         new TradeOffers.SellItemFactory(Items.NAME_TAG, 20, 1, 30)}).build());
+    //     }
+    //     return iter;
+    // }
 
-    @Unique
-    private TradeOffers.EnchantBookFactory biomeBook(boolean master, VillagerData villagerData) {
-        Random rn = this.getWorld().random;
-        Object2ObjectMap<VillagerType, Enchantment[]> biomeEnchants =  new Object2ObjectOpenHashMap(ImmutableMap.builder()
-                .put(VillagerType.DESERT, new Enchantment[]{Enchantments.FIRE_PROTECTION, Enchantments.IMPALING, Enchantments.THORNS, Enchantments.EFFICIENCY, Enchantments.INFINITY})
-                .put(VillagerType.JUNGLE, new Enchantment[]{Enchantments.FEATHER_FALLING, Enchantments.SWEEPING, Enchantments.POWER, Enchantments.UNBREAKING, Enchantments.CHANNELING})
-                .put(VillagerType.PLAINS, new Enchantment[]{Enchantments.PROTECTION, Enchantments.SMITE, Enchantments.PUNCH, Enchantments.FIRE_ASPECT, Enchantments.MULTISHOT})
-                .put(VillagerType.SAVANNA, new Enchantment[]{Enchantments.KNOCKBACK, Enchantments.SHARPNESS, Enchantments.DEPTH_STRIDER, Enchantments.BINDING_CURSE, Enchantments.LOYALTY})
-                .put(VillagerType.SNOW, new Enchantment[]{Enchantments.AQUA_AFFINITY, Enchantments.QUICK_CHARGE, Enchantments.FROST_WALKER, Enchantments.LOOTING, Enchantments.SILK_TOUCH})
-                .put(VillagerType.SWAMP, new Enchantment[]{Enchantments.PROJECTILE_PROTECTION, Enchantments.PIERCING, Enchantments.RESPIRATION, Enchantments.VANISHING_CURSE, Enchantments.MENDING})
-                .put(VillagerType.TAIGA, new Enchantment[]{Enchantments.BLAST_PROTECTION, Enchantments.BANE_OF_ARTHROPODS, Enchantments.RIPTIDE, Enchantments.FORTUNE, Enchantments.FLAME})
-                .build());
+    // @Unique
+    // private TradeOffers.EnchantBookFactory biomeBook(boolean master, VillagerData villagerData) {
+    //     Random rn = this.getWorld().random;
+    //     Object2ObjectMap<VillagerType, Enchantment[]> biomeEnchants =  new Object2ObjectOpenHashMap(ImmutableMap.builder()
+    //             .put(VillagerType.DESERT, new Enchantment[]{Enchantments.FIRE_PROTECTION, Enchantments.IMPALING, Enchantments.THORNS, Enchantments.EFFICIENCY, Enchantments.INFINITY})
+    //             .put(VillagerType.JUNGLE, new Enchantment[]{Enchantments.FEATHER_FALLING, Enchantments.SWEEPING, Enchantments.POWER, Enchantments.UNBREAKING, Enchantments.CHANNELING})
+    //             .put(VillagerType.PLAINS, new Enchantment[]{Enchantments.PROTECTION, Enchantments.SMITE, Enchantments.PUNCH, Enchantments.FIRE_ASPECT, Enchantments.MULTISHOT})
+    //             .put(VillagerType.SAVANNA, new Enchantment[]{Enchantments.KNOCKBACK, Enchantments.SHARPNESS, Enchantments.DEPTH_STRIDER, Enchantments.BINDING_CURSE, Enchantments.LOYALTY})
+    //             .put(VillagerType.SNOW, new Enchantment[]{Enchantments.AQUA_AFFINITY, Enchantments.QUICK_CHARGE, Enchantments.FROST_WALKER, Enchantments.LOOTING, Enchantments.SILK_TOUCH})
+    //             .put(VillagerType.SWAMP, new Enchantment[]{Enchantments.PROJECTILE_PROTECTION, Enchantments.PIERCING, Enchantments.RESPIRATION, Enchantments.VANISHING_CURSE, Enchantments.MENDING})
+    //             .put(VillagerType.TAIGA, new Enchantment[]{Enchantments.BLAST_PROTECTION, Enchantments.BANE_OF_ARTHROPODS, Enchantments.RIPTIDE, Enchantments.FORTUNE, Enchantments.FLAME})
+    //             .build());
 
-        Enchantment[] enchants = biomeEnchants.get(villagerData.getType());
-        boolean includeSpecial = master || enchants[enchants.length-1].getMaxLevel()!=1;
-        Enchantment enchant = enchants[rn.nextInt(enchants.length+(includeSpecial?0:-1))];
-        int maxLevel = enchant.getMaxLevel();
-        int midLevel = (int)Math.ceil(maxLevel/2.0);
-        int level = maxLevel==1?1:((master?midLevel+rn.nextInt(maxLevel-midLevel):rn.nextInt(midLevel))+1);
-        return new TradeOffers.EnchantBookFactory(master?30:10, level, level, enchant);
-    }
+    //     Enchantment[] enchants = biomeEnchants.get(villagerData.getType());
+    //     boolean includeSpecial = master || enchants[enchants.length-1].getMaxLevel()!=1;
+    //     Enchantment enchant = enchants[rn.nextInt(enchants.length+(includeSpecial?0:-1))];
+    //     int maxLevel = enchant.getMaxLevel();
+    //     int midLevel = (int)Math.ceil(maxLevel/2.0);
+    //     int level = maxLevel==1?1:((master?midLevel+rn.nextInt(maxLevel-midLevel):rn.nextInt(midLevel))+1);
+    //     return new TradeOffers.EnchantBookFactory(master?30:10, level, level, enchant);
+    // }
 }

@@ -23,36 +23,36 @@ import java.util.List;
 @Mixin(EnchantmentHelper.class)
 public class EnchantmentHelperMixin {
 
-    @Redirect(method = "getPossibleEntries", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMinPower(I)I"))
-    private static int checkEnchantmentCapacity(Enchantment enchantment, int level, @Local(argsOnly = true) ItemStack itemStack) {
-        int capacity = FixedMinecraftEnchantmentHelper.getEnchantmentCapacity(itemStack);
-        int enchPower = FixedMinecraftEnchantmentHelper.getEnchantmentPower(enchantment, level);
+    // @Redirect(method = "getPossibleEntries", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMinPower(I)I"))
+    // private static int checkEnchantmentCapacity(Enchantment enchantment, int level, @Local(argsOnly = true) ItemStack itemStack) {
+    //     int capacity = FixedMinecraftEnchantmentHelper.getEnchantmentCapacity(itemStack);
+    //     int enchPower = FixedMinecraftEnchantmentHelper.getEnchantmentPower(enchantment, level);
 
-        if (capacity < enchPower) {
-            return Integer.MAX_VALUE;
-        }
-        return enchPower;
-    }
+    //     if (capacity < enchPower) {
+    //         return Integer.MAX_VALUE;
+    //     }
+    //     return enchPower;
+    // }
 
-    @Redirect(method = "getPossibleEntries", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMaxPower(I)I"))
-    private static int bypassCheck(Enchantment enchantment, int level, @Local(argsOnly = true) int power) {
-        return power;
-    }
+    // @Redirect(method = "getPossibleEntries", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMaxPower(I)I"))
+    // private static int bypassCheck(Enchantment enchantment, int level, @Local(argsOnly = true) int power) {
+    //     return power;
+    // }
 
     @ModifyExpressionValue(method = "getPossibleEntries", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentTarget;isAcceptableItem(Lnet/minecraft/item/Item;)Z"))
     private static boolean horseArmorCheck (boolean original, @Local() Item item, @Local Enchantment enchantment) {
         return FixedMinecraftEnchantmentHelper.horseArmorCheck(enchantment, item);
     }
 
-    @Inject(method = "generateEnchantments", at = @At("HEAD"))
-    private static void saveOriginalLevelArgument(Random random, ItemStack stack, int level, boolean treasureAllowed,
-                                                  CallbackInfoReturnable<List<EnchantmentLevelEntry>> cir,
-                                                  @Share("lvl") LocalIntRef levelReference) {
-        levelReference.set(level);
-    }
+    // @Inject(method = "generateEnchantments", at = @At("HEAD"))
+    // private static void saveOriginalLevelArgument(Random random, ItemStack stack, int level, boolean treasureAllowed,
+    //                                               CallbackInfoReturnable<List<EnchantmentLevelEntry>> cir,
+    //                                               @Share("lvl") LocalIntRef levelReference) {
+    //     levelReference.set(level);
+    // }
 
-    @ModifyArg(method = "generateEnchantments", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getPossibleEntries(ILnet/minecraft/item/ItemStack;Z)Ljava/util/List;"), index = 0)
-    private static int ignoreArgumentManipulationShenanigans(int power, @Share("lvl") LocalIntRef levelReference) {
-        return levelReference.get();
-    }
+    // @ModifyArg(method = "generateEnchantments", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;getPossibleEntries(ILnet/minecraft/item/ItemStack;Z)Ljava/util/List;"), index = 0)
+    // private static int ignoreArgumentManipulationShenanigans(int power, @Share("lvl") LocalIntRef levelReference) {
+    //     return levelReference.get();
+    // }
 }

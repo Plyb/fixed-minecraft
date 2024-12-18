@@ -18,9 +18,9 @@ object ItemGroupRegistry {
             entries.add(ItemRegistry.ECHO_TOTEM)
             entries.add(ItemRegistry.ECHO_FRUIT)
 
-            entries.add(BlockRegistry.NETHERITE_ANVIL)
-            entries.add(BlockRegistry.CHIPPED_NETHERITE_ANVIL)
-            entries.add(BlockRegistry.DAMAGED_NETHERITE_ANVIL)
+            // entries.add(BlockRegistry.NETHERITE_ANVIL)
+            // entries.add(BlockRegistry.CHIPPED_NETHERITE_ANVIL)
+            // entries.add(BlockRegistry.DAMAGED_NETHERITE_ANVIL)
 
             entries.add(BlockRegistry.COPPER_RAIL)
             entries.add(BlockRegistry.EXPOSED_COPPER_RAIL)

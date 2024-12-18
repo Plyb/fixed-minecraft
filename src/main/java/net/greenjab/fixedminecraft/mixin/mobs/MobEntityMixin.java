@@ -77,19 +77,19 @@ public abstract class MobEntityMixin extends LivingEntity {
         ci.cancel();
     }
 
-    @ModifyExpressionValue(method = "enchantEquipment", at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/enchantment/EnchantmentHelper;enchant(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/item/ItemStack;IZ)Lnet/minecraft/item/ItemStack;"))
-    private ItemStack applySuperEnchantArmor(ItemStack original,
-                                        @Local(argsOnly = true) Random random) {
-        return FixedMinecraftEnchantmentHelper.applySuperEnchants(original, random);
-    }
+    // @ModifyExpressionValue(method = "enchantEquipment", at = @At(value = "INVOKE",
+    //         target = "Lnet/minecraft/enchantment/EnchantmentHelper;enchant(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/item/ItemStack;IZ)Lnet/minecraft/item/ItemStack;"))
+    // private ItemStack applySuperEnchantArmor(ItemStack original,
+    //                                     @Local(argsOnly = true) Random random) {
+    //     return FixedMinecraftEnchantmentHelper.applySuperEnchants(original, random);
+    // }
 
-    @ModifyExpressionValue(method = "enchantMainHandItem", at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/enchantment/EnchantmentHelper;enchant(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/item/ItemStack;IZ)Lnet/minecraft/item/ItemStack;"))
-    private ItemStack applySuperEnchantHand(ItemStack original,
-                                        @Local(argsOnly = true) Random random) {
-        return FixedMinecraftEnchantmentHelper.applySuperEnchants(original, random);
-    }
+    // @ModifyExpressionValue(method = "enchantMainHandItem", at = @At(value = "INVOKE",
+    //         target = "Lnet/minecraft/enchantment/EnchantmentHelper;enchant(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/item/ItemStack;IZ)Lnet/minecraft/item/ItemStack;"))
+    // private ItemStack applySuperEnchantHand(ItemStack original,
+    //                                     @Local(argsOnly = true) Random random) {
+    //     return FixedMinecraftEnchantmentHelper.applySuperEnchants(original, random);
+    // }
 
     @Inject(method = "initialize", at=@At(value = "HEAD"))
     private void addStuff(ServerWorldAccess world, LocalDifficulty localDifficulty, SpawnReason spawnReason, EntityData entityData,

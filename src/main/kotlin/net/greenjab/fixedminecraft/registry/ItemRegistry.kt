@@ -30,9 +30,9 @@ object ItemRegistry {
     //val ECHO_TOTEM: Item = item(::Item) {maxCount(1).rarity(Rarity.UNCOMMON)}
     val ECHO_FRUIT: Item =  EchoFruitItem(FabricItemSettings().maxCount(64).rarity(Rarity.UNCOMMON).food(FoodComponents.CHORUS_FRUIT))
 
-    val NETHERITE_ANVIL = blockItem(BlockRegistry.NETHERITE_ANVIL, Item.Settings::fireproof)
-    val CHIPPED_NETHERITE_ANVIL = blockItem(BlockRegistry.CHIPPED_NETHERITE_ANVIL, Item.Settings::fireproof)
-    val DAMAGED_NETHERITE_ANVIL = blockItem(BlockRegistry.DAMAGED_NETHERITE_ANVIL, Item.Settings::fireproof)
+    // val NETHERITE_ANVIL = blockItem(BlockRegistry.NETHERITE_ANVIL, Item.Settings::fireproof)
+    // val CHIPPED_NETHERITE_ANVIL = blockItem(BlockRegistry.CHIPPED_NETHERITE_ANVIL, Item.Settings::fireproof)
+    // val DAMAGED_NETHERITE_ANVIL = blockItem(BlockRegistry.DAMAGED_NETHERITE_ANVIL, Item.Settings::fireproof)
 
     val COPPER_RAIL = blockItem(BlockRegistry.COPPER_RAIL)
     val EXPOSED_COPPER_RAIL = blockItem(BlockRegistry.EXPOSED_COPPER_RAIL)
@@ -56,9 +56,9 @@ object ItemRegistry {
         ITEM.register("echo_totem", ECHO_TOTEM)
         ITEM.register("echo_fruit", ECHO_FRUIT)
 
-        ITEM.register("netherite_anvil", NETHERITE_ANVIL)
-        ITEM.register("chipped_netherite_anvil", CHIPPED_NETHERITE_ANVIL)
-        ITEM.register("damaged_netherite_anvil", DAMAGED_NETHERITE_ANVIL)
+        // ITEM.register("netherite_anvil", NETHERITE_ANVIL)
+        // ITEM.register("chipped_netherite_anvil", CHIPPED_NETHERITE_ANVIL)
+        // ITEM.register("damaged_netherite_anvil", DAMAGED_NETHERITE_ANVIL)
 
         ITEM.register("copper_rail", COPPER_RAIL)
         ITEM.register("exposed_copper_rail", EXPOSED_COPPER_RAIL)

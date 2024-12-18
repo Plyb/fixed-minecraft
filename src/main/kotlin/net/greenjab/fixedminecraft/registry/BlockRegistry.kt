@@ -1,7 +1,7 @@
 package net.greenjab.fixedminecraft.registry
 
 import net.greenjab.fixedminecraft.registry.block.CopperRailBlock
-import net.greenjab.fixedminecraft.registry.block.NetheriteAnvilBlock
+// import net.greenjab.fixedminecraft.registry.block.NetheriteAnvilBlock
 import net.greenjab.fixedminecraft.registry.block.OxidizableRailBlock
 import net.greenjab.fixedminecraft.registry.entity.BrickEntity
 import net.minecraft.block.Blocks
@@ -23,21 +23,21 @@ import net.minecraft.util.math.Vec3d
 import net.minecraft.world.World
 
 object BlockRegistry {
-    val NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
-        strength(15.0F, 1200.0F)
-        sounds(BlockSoundGroup.ANVIL)
-        pistonBehavior(PistonBehavior.BLOCK)
-    }
-    val CHIPPED_NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
-        strength(15.0F, 1200.0F)
-        sounds(BlockSoundGroup.ANVIL)
-        pistonBehavior(PistonBehavior.BLOCK)
-    }
-    val DAMAGED_NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
-        strength(15.0F, 1200.0F)
-        sounds(BlockSoundGroup.ANVIL)
-        pistonBehavior(PistonBehavior.BLOCK)
-    }
+//     val NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
+//         strength(15.0F, 1200.0F)
+//         sounds(BlockSoundGroup.ANVIL)
+//         pistonBehavior(PistonBehavior.BLOCK)
+//     }
+//     val CHIPPED_NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
+//         strength(15.0F, 1200.0F)
+//         sounds(BlockSoundGroup.ANVIL)
+//         pistonBehavior(PistonBehavior.BLOCK)
+//     }
+//     val DAMAGED_NETHERITE_ANVIL = block(Blocks.NETHERITE_BLOCK, ::NetheriteAnvilBlock) {
+//         strength(15.0F, 1200.0F)
+//         sounds(BlockSoundGroup.ANVIL)
+//         pistonBehavior(PistonBehavior.BLOCK)
+//     }
     @JvmField val COPPER_RAIL = block(Blocks.POWERED_RAIL, { OxidizableRailBlock(Oxidizable.OxidationLevel.UNAFFECTED, it) })
     @JvmField val EXPOSED_COPPER_RAIL = block(Blocks.POWERED_RAIL, { OxidizableRailBlock(Oxidizable.OxidationLevel.EXPOSED, it) })
     @JvmField val WEATHERED_COPPER_RAIL = block(Blocks.POWERED_RAIL, { OxidizableRailBlock(Oxidizable.OxidationLevel.WEATHERED, it) })
@@ -50,9 +50,9 @@ object BlockRegistry {
 
 
     fun register() {
-        BLOCK.register("netherite_anvil", NETHERITE_ANVIL)
-        BLOCK.register("chipped_netherite_anvil", CHIPPED_NETHERITE_ANVIL)
-        BLOCK.register("damaged_netherite_anvil", DAMAGED_NETHERITE_ANVIL)
+        // BLOCK.register("netherite_anvil", NETHERITE_ANVIL)
+        // BLOCK.register("chipped_netherite_anvil", CHIPPED_NETHERITE_ANVIL)
+        // BLOCK.register("damaged_netherite_anvil", DAMAGED_NETHERITE_ANVIL)
 
         BLOCK.register("copper_rail", COPPER_RAIL)
         BLOCK.register("exposed_copper_rail", EXPOSED_COPPER_RAIL)
