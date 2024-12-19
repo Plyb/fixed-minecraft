@@ -8,9 +8,9 @@ import net.minecraft.text.Text
 @Suppress("MemberVisibilityCanBePrivate")
 object ItemGroupRegistry {
     val FIXED = itemGroup(Text.translatable("itemgroup.fixed")) {
-        icon { ItemStack(ItemRegistry.DRAGON_FIREWORK_ROCKET) }
+        icon { ItemStack(ItemRegistry.MAP_BOOK) } // used to be DRAGON_FIREWORK_ROCKET
         entries { _: ItemGroup.DisplayContext, entries: ItemGroup.Entries ->
-            entries.add(ItemRegistry.DRAGON_FIREWORK_ROCKET)
+            // entries.add(ItemRegistry.DRAGON_FIREWORK_ROCKET)
             entries.add(ItemRegistry.MAP_BOOK)
             entries.add(ItemRegistry.NETHERITE_HORSE_ARMOR)
 

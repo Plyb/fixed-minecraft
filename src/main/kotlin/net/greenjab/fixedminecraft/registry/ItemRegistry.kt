@@ -17,7 +17,7 @@ import net.minecraft.util.Rarity
 
 @Suppress("MemberVisibilityCanBePrivate")
 object ItemRegistry {
-    val DRAGON_FIREWORK_ROCKET = item(::FireworkRocketItem)
+    // val DRAGON_FIREWORK_ROCKET = item(::FireworkRocketItem)
     val MAP_BOOK: Item = MapBookItem(FabricItemSettings().maxCount(1))
     val NETHERITE_HORSE_ARMOR = item({ HorseArmorItem(15, "netherite", it) }) {
         maxCount(1)
@@ -48,7 +48,7 @@ object ItemRegistry {
     val LEVITATION = Potion("levitation", StatusEffectInstance(StatusEffects.LEVITATION, 1200))
 
     fun register() {
-        ITEM.register("dragon_firework_rocket", DRAGON_FIREWORK_ROCKET)
+        // ITEM.register("dragon_firework_rocket", DRAGON_FIREWORK_ROCKET)
         ITEM.register("map_book", MAP_BOOK)
         ITEM.register("netherite_horse_armor", NETHERITE_HORSE_ARMOR)
 
